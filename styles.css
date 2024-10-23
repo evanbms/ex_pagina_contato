@@ -1,0 +1,164 @@
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  box-shadow: 0 0 10px hsla(260, 23%, 3%, 0.5);
+  gap: 50px;
+  color: black;
+}
+
+.form {
+  width:min-content;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 32px;
+  box-shadow: 0 0 10px rgba(20, 3, 151, 0.5);
+  margin-left:15px;
+  
+}
+
+.siganos {
+  margin-right: 15px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(20, 3, 151, 0.5);
+  position: relative;
+  bottom: 70px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+li {
+  position: relative;
+  float: left;
+  list-style: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+/*Botão*/
+#contact {
+  background-color: orange;
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/*Botão*/
+#contact:hover {
+  background-color: darkorange;
+}
+
+#response-message {
+  text-align: center;
+  color: black;
+}
+
+#fale {
+  margin-top: 10px;
+  position: relative;
+}
+
+#at {
+  margin-top: 10px;
+  position: relative;
+}
+
+.fale-conosco2 {
+  position: relative;
+  margin-left: 50%;
+  bottom: 110px;
+}
+
+#globe {
+  margin-top: 10px;
+  position: relative;
+}
+
+#location {
+  margin-top: 10px;
+  position: relative;
+}
+
+.fa-brands {
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+h1 {
+  color: orangered;
+}
+
+.container:nth-child(2) {
+  margin-top: 5px;
+  box-shadow: 0 0 10px hsla(260, 23%, 3%, 0.5);
+}
+
+label:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+.helper-text {
+  display:none;
+  font-size: 0.8rem;
+  color: darkred;
+}
+
+.required-popup::after {
+  content: "*Campo obrigatório";
+  position: relative;
+  top: 0;
+  right: 0;
+  color: #dfdfdf;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.3rem;
+  width: 100px;
+  display: block;
+  background-color: #202020;
+}
+
+input.error {
+  border: solid 2px #992020;
+  background-color: #ccbbbb;
+  color: #662020;
+}
+
+input.correct {
+  background-color: #bbccbb;
+  border: solid 2px #206620;
+  color: #206620;
+}
+
+.visible {
+  display: block;
+}
+
+.titulo-contato {
+  margin-left: 15px;
+}
