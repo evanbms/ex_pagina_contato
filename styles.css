@@ -29,6 +29,7 @@ body {
   padding: 32px;
   box-shadow: 0 0 10px rgba(20, 3, 151, 0.5);
   margin-left:15px;
+  margin-bottom: 5px;
   
 }
 
@@ -53,9 +54,9 @@ li {
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 200px;
+  width: 250px;
   padding: 8px;
-  margin-bottom: 5px;
+  margin-bottom: -15px;
   border: 1px solid #ccc;
   border-radius: 4px;
   
@@ -63,15 +64,18 @@ textarea {
 /*Botão*/
 #contact {
   background-color: orange;
-  color: black;
   padding: 10px 15px;
-  border: none;
+  border: black;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 15px;
+  
 }
 /*Botão*/
 #contact:hover {
   background-color: darkorange;
+  box-shadow: 0 0 10px hsla(260, 23%, 3%, 0.5);
+  margin-top: 15px;
 }
 
 #response-message {
@@ -120,12 +124,12 @@ h1 {
   box-shadow: 0 0 10px hsla(260, 23%, 3%, 0.5);
 }
 
-label:not(:first-of-type) {
+/* label:not(:first-of-type) {
   margin-top: 1rem;
-}
+} */
 
 .helper-text {
-  display:none;
+  display:block;
   font-size: 0.8rem;
   color: darkred;
 }
@@ -133,8 +137,9 @@ label:not(:first-of-type) {
 .required-popup::after {
   content: "*Campo obrigatório";
   position: relative;
-  top: 0;
-  right: 0;
+  float: right;
+  /* top: 0; */
+  /* right: 0; */
   color: #dfdfdf;
   font-size: 0.65rem;
   padding: 0.2rem 0.3rem;
