@@ -119,9 +119,20 @@ h1 {
   color: orangered;
 }
 
-.container:nth-child(2) {
-  margin-top: 5px;
-  box-shadow: 0 0 10px hsla(260, 23%, 3%, 0.5);
+.container-2 {
+  /* float:right; */
+  padding: 10px;
+  display: flex;
+  flex-direction:column;
+  height:260px;
+  margin-top: -8%;
+      
+} 
+.contacts {
+  display: flex;
+  flex-direction:column;
+  
+
 }
 
 /* label:not(:first-of-type) {
@@ -143,7 +154,7 @@ h1 {
   color: #dfdfdf;
   font-size: 0.65rem;
   padding: 0.2rem 0.3rem;
-  width: 100px;
+  width: auto;
   display: block;
   background-color: #202020;
 }
