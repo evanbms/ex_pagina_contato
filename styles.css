@@ -3,6 +3,7 @@
     flex-direction: column;
   }
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -22,15 +23,15 @@ body {
   color: black;
 }
 
-.form {
-  width:min-content;
-  margin: 0 auto;
+form {
+  width: min-content;
   border-radius: 5px;
-  padding: 32px;
+  padding: 15px;
   box-shadow: 0 0 10px rgba(20, 3, 151, 0.5);
-  margin-left:15px;
-  margin-bottom: 5px;
-  
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
 .siganos {
@@ -58,14 +59,15 @@ li {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="idade"],
 textarea {
   width: 250px;
   padding: 8px;
-  margin-bottom: -15px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  
 }
+
 /*Botão*/
 #contact {
   background-color: orange;
@@ -74,7 +76,6 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 15px;
-  
 }
 /*Botão*/
 #contact:hover {
@@ -125,28 +126,20 @@ h1 {
 }
 
 .container-2 {
-  /* float:right; */
   padding: 15px;
   display: flex;
-  flex-direction:column;
-  height:260px;
+  flex-direction: column;
+  height: 260px;
   margin-top: -8%;
   margin-right: 10px;
-  
-      
-} 
+}
 .contacts {
   display: flex;
-  flex-direction:column;
-  
+  flex-direction: column;
 }
 
-/* label:not(:first-of-type) {
-  margin-top: 1rem;
-} */
-
 .helper-text {
-  display:block;
+  display: none;
   font-size: 0.8rem;
   color: darkred;
 }
@@ -155,8 +148,6 @@ h1 {
   content: "*Campo obrigatório";
   position: relative;
   float: right;
-  /* top: 0; */
-  /* right: 0; */
   color: #dfdfdf;
   font-size: 0.65rem;
   padding: 0.2rem 0.3rem;
@@ -181,6 +172,19 @@ input.correct {
   display: block;
 }
 
+#idade {
+  margin-bottom: 10px;
+}
+
+#senha {
+  margin-bottom: 10px;
+}
+
+#confirma-senha {
+  margin-bottom: 10px;
+}
+
+/* 
 .titulo-contato {
   margin-left: 15px;
-}
+} */

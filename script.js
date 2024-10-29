@@ -6,9 +6,7 @@ document
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
-
-    // Aqui você poderia enviar os dados para um servidor ou processá-los conforme necessário
-
+    
     // Apenas uma mensagem de confirmação para o usuário
     const responseMessage = document.getElementById("response-message");
     responseMessage.innerText = `Obrigado, ${name}! Sua mensagem foi enviada.`;
@@ -50,32 +48,20 @@ let nameHelper = document.getElementById("name-helper");
 
 togglePopup(nameInput, nameLabel)
 
-// function mostrarPopup(input, label) {
-//   // Mostrar popup de campo obrigatório
-//   nameInput.addEventListener("focus", () => {
-//     nameLabel.classList.add("required-popup");
-//   });
-// }
-
-// // Ocultar popup de campo obrigatório
-// nameInput.addEventListener("blur", () => {
-//   nameLabel.classList.remove("required-popup");
-// });
-
 // Validar valor do input para o username
 nameInput.addEventListener("change", (e) => {
-  let valor = e.target.value
+  let valor = e.target.value;
   // console.log(valor);
 
   if (valor.length < 3) {
     // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
     nameHelper.innerText = "Seu username deve ter ao menos 3 ou mais caracteres";
     estilizarInputIncorreto(nameInput, nameHelper)    
-    inputsCorretos.username = false
-    // nameInput.classList.remove("correct");
-    // nameInput.classList.add("error");
+    // inputsCorretos.username = false
+    nameInput.classList.remove("correct");
+    nameInput.classList.add("error");
     // nameHelper.innerText = "Necessário ao menos 3 caracteres";
-    // nameHelper.classList.add("visible");
+    nameHelper.classList.add("visible");
   } else {
     // Adicionar estilos dinâmicos se o valor estiver correto
     estilizarInputCorreto(nameInput, nameHelper);
@@ -93,49 +79,39 @@ let emailHelper = document.getElementById("email-helper");
 
 togglePopup(emailInput, emailLabel)
 
+// Criação de funções para mostrar acerto e erro do input email
+function mostrarAcerto(input, helper) {
+  input.classList.remove("error");
+  helper.classList.remove("visible");
+  input.classList.add("correct");
+}
 
-//   emailLabel.classList.add("required-popup");
-// });
-
-// Ocultar popup de campo obrigatório para o email
-// emailInput.addEventListener("blur", () => {
-//   emailLabel.classList.remove("required-popup");
-// });
-// mostrarPopup(emailInput, emailLabel);
-
-// // Criação de funções para mostrar acerto e erro do input email
-// function mostrarAcerto(input, helper) {
-//   input.classList.remove("error");
-//   helper.classList.remove("visible");
-//   input.classList.add("correct");
-// }
-
-// function mostrarError(input, helper, menssagem) {
-//   input.classList.remove("correct");
-//   input.classList.add("error");
-//   helper.innerText = menssagem;
-//   helper.classList.add("visible");
-// }
+function mostrarError(input, helper, menssagem) {
+  input.classList.remove("correct");
+  input.classList.add("error");
+  helper.innerText = menssagem;
+  helper.classList.add("visible");
+}
 
 // Validar valor do input
 emailInput.addEventListener("change", (e) => {
   let valor = e.target.value;
 
   if (valor.includes("@") && valor.includes(".com")) {
-    // emailInput.classList.remove("error");
-    // emmailHelper.classList.remove("visible");
-    // emailInput.classList.add("correct");
-    estilizarInputCorreto(emailInput, emailHelper);
+    emailInput.classList.remove("error");
+    emailHelper.classList.remove("visible");
+    emailInput.classList.add("correct");
+    // estilizarInputCorreto(emailInput, emailHelper);
     inputsCorretos.email = true
-    // mostrarAcerto(emailInput, emailHelper);
+    mostrarAcerto(emailInput, emailHelper);
   } else {
-    // emailInput.classList.remove("correct");
-    // emailInput.classList.add("error");
-    // emailHelper.innerText = "Entre com um email válido";
-    // emailHelper.classList.add("visible");
-    // mostrarError(emailInput, emailHelper, "Entre com um email válido");
-    emailHelper.innerText ="Precisa inserir um email válido";
-    estilizarInputIncorreto(emailInput, emailHelper);
+    emailInput.classList.remove("correct");
+    emailInput.classList.add("error");
+    emailHelper.innerText = "Entre com um email válido";
+    emailHelper.classList.add("visible");
+    mostrarError(emailInput, emailHelper, "Entre com um email válido");
+    // emailHelper.innerText ="Precisa inserir um email válido";
+    // estilizarInputIncorreto(emailInput, emailHelper);
     inputsCorretos.email = false
   }
 });
@@ -180,7 +156,7 @@ confirmaSenhaInput.addEventListener("blur", (e)=> {
 })
 
 
-// ---------- EVITAR ENVIO DO FORMULÁRIO ---------- //
+//---------- EVITAR ENVIO DO FORMULÁRIO ---------- //
 let btnSubmit = document.querySelector('button[type="submit"]')
 let inputsCorretos = {
   username: false,
