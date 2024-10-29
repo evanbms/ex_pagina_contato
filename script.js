@@ -53,18 +53,34 @@ nameInput.addEventListener("change", (e) => {
   let valor = e.target.value;
   // console.log(valor);
 
+  // Criação de funções para mostrar acerto e erro do input name
+function mostrarAcerto(input, helper) {
+  input.classList.remove("error");
+  helper.classList.remove("visible");
+  input.classList.add("correct");
+}
+
+function mostrarError(input, helper, menssagem) {
+  input.classList.remove("correct");
+  input.classList.add("error");
+  helper.innerText = menssagem;
+  helper.classList.add("visible");
+}
+
   if (valor.length < 3) {
     // Adicionar estilos dinâmicos se o valor tiver menos de 3 caracteres
-    nameHelper.innerText = "Seu username deve ter ao menos 3 ou mais caracteres";
-    estilizarInputIncorreto(nameInput, nameHelper)    
-    // inputsCorretos.username = false
-    nameInput.classList.remove("correct");
-    nameInput.classList.add("error");
-    // nameHelper.innerText = "Necessário ao menos 3 caracteres";
-    nameHelper.classList.add("visible");
+    mostrarError(nameInput, nameHelper, "Seu username deve ter ao menos 3 ou mais caracteres");
+    // nameHelper.innerText = "Seu username deve ter ao menos 3 ou mais caracteres";
+    // estilizarInputIncorreto(nameInput, nameHelper)    
+    inputsCorretos.username = false
+    // nameInput.classList.remove("correct");
+    // nameInput.classList.add("error");
+    // // nameHelper.innerText = "Necessário ao menos 3 caracteres";
+    // nameHelper.classList.add("visible");
   } else {
+    mostrarAcerto(nameInput, nameHelper);
     // Adicionar estilos dinâmicos se o valor estiver correto
-    estilizarInputCorreto(nameInput, nameHelper);
+    // estilizarInputCorreto(nameInput, nameHelper);
     inputsCorretos.username = true
     // nameInput.classList.remove("error");
     // nameHelper.classList.remove("visible");
@@ -98,17 +114,17 @@ emailInput.addEventListener("change", (e) => {
   let valor = e.target.value;
 
   if (valor.includes("@") && valor.includes(".com")) {
-    emailInput.classList.remove("error");
-    emailHelper.classList.remove("visible");
-    emailInput.classList.add("correct");
+    // emailInput.classList.remove("error");
+    // emailHelper.classList.remove("visible");
+    // emailInput.classList.add("correct");
     // estilizarInputCorreto(emailInput, emailHelper);
     inputsCorretos.email = true
     mostrarAcerto(emailInput, emailHelper);
   } else {
-    emailInput.classList.remove("correct");
-    emailInput.classList.add("error");
-    emailHelper.innerText = "Entre com um email válido";
-    emailHelper.classList.add("visible");
+    // emailInput.classList.remove("correct");
+    // emailInput.classList.add("error");
+    // emailHelper.innerText = "Entre com um email válido";
+    // emailHelper.classList.add("visible");
     mostrarError(emailInput, emailHelper, "Entre com um email válido");
     // emailHelper.innerText ="Precisa inserir um email válido";
     // estilizarInputIncorreto(emailInput, emailHelper);
@@ -125,9 +141,11 @@ togglePopup(senhaInput, senhaLabel)
 
 senhaInput.addEventListener("blur", (e)=> {
   let valor = e.target.value
+
   if(valor == ""){
-    senhaHelper.innerText = "O campo senha não pode estar vazio"
-    estilizarInputIncorreto(senhaInput, senhaHelper)
+    // senhaHelper.innerText = "O campo senha não pode estar vazio"
+    mostrarError(senhaInput, senhaHelper, "O campo senha não pode estar vazio");
+    // estilizarInputIncorreto(senhaInput, senhaHelper)
     inputsCorretos.senha = false
   }else{
     estilizarInputCorreto(senhaInput, senhaHelper)
@@ -137,20 +155,22 @@ senhaInput.addEventListener("blur", (e)=> {
 
 // ---------- VALIDAÇÂO CONFIRMA SENHA ---------- //
 let confirmaSenhaInput = document.getElementById("confirma-senha");
-let confirmasenhaLabel = document.querySelector('label[for="confirma-senha"]');
-let confirmasenhaHelper = document.getElementById("confirma-senha-helper");
+let confirmaSenhaLabel = document.querySelector('label[for="confirma-senha"]');
+let confirmaSenhaHelper = document.getElementById("confirma-senha-helper");
 
-togglePopup(confirmaSenhaInput, confirmasenhaLabel)
+togglePopup(confirmaSenhaInput, confirmaSenhaLabel)
 
 confirmaSenhaInput.addEventListener("blur", (e)=> {
   let valorConfirmaSenha = e.target.value
 
   if(valorConfirmaSenha == senhaInput.value){
-    estilizarInputCorreto(confirmaSenhaInput, confirmasenhaHelper)
+    estilizarInputCorreto(confirmaSenhaInput, confirmaSenhaHelper)
+    // mostrarError(confirmaSenhaInput, confirmasenhaHelper)
     inputsCorretos.confirmaSenha = true
   }else{
-    confirmasenhaHelper.innerText = "As senhas precisam ser iguais"
-    estilizarInputIncorreto(confirmaSenhaInput, confirmasenhaHelper)
+    // confirmaSenhaHelper.innerText = "As senhas precisam ser iguais"
+    // estilizarInputIncorreto(confirmaSenhaInput, confirmaSenhaHelper)
+    mostrarError(confirmaSenhaInput, confirmaSenhaHelper, "As senhas precisam ser iguais");
     inputsCorretos.confirmaSenha = false
   }
 })
