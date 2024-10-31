@@ -146,7 +146,7 @@ h1 {
 
 .required-popup::after {
   content: "*Campo obrigatório";
-  position: relative;
+  position:relative;
   float: right;
   color: #dfdfdf;
   font-size: 0.65rem;
