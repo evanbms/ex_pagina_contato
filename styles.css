@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0 auto;
-  padding: 32px;
+  padding: 80px;
 }
 
 .container {
@@ -66,6 +66,7 @@ textarea {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-top: 2px;
 }
 
 /*Botão*/
@@ -139,9 +140,10 @@ h1 {
 }
 
 .helper-text {
-  display: none;
+  display:none;
   font-size: 0.8rem;
   color: darkred;
+  margin-top: 2px;
 }
 
 .required-popup::after {
@@ -188,3 +190,22 @@ input.correct {
 .titulo-contato {
   margin-left: 15px;
 } */
+
+section {
+  margin-bottom: 10px;
+}
+
+#contact-form {
+  padding: 32px;
+  margin-top: 15px;
+}
+
+label {
+  font-weight:bold;
+}
+
+#nacionalidade {
+  color: blue;
+  font-weight:bold;
+}
+
