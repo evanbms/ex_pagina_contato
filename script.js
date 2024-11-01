@@ -172,12 +172,8 @@ confirmaSenhaInput.addEventListener("blur", (e) => {
     inputsCorretos.confirmaSenha = true;
   } else {
     // confirmaSenhaHelper.innerText = "As senhas precisam ser iguais"
-    // estilizarInputIncorreto(confirmaSenhaInput, confirmaSenhaHelper)
-    mostrarError(
-      confirmaSenhaInput,
-      confirmaSenhaHelper,
-      "As senhas precisam ser iguais"
-    );
+    // estilizarInputIncorreto(confirmaSenhaInput, confirmaSenhaHelper);
+    mostrarError(confirmaSenhaInput, confirmaSenhaHelper, "As senhas precisam ser iguais");
     inputsCorretos.confirmaSenha = false;
   }
 });
