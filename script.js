@@ -52,7 +52,7 @@ nameInput.addEventListener("change", (e) => {
   let valor = e.target.value;
   // console.log(valor);
 
-  // Criação de funções para mostrar acerto e erro do input name
+  // Criação de funções para mostrar acerto e erro do input username
   function mostrarAcerto(input, helper) {
     input.classList.remove("error");
     helper.classList.remove("visible");
@@ -146,10 +146,10 @@ senhaInput.addEventListener("blur", (e) => {
   let valor = e.target.value;
 
   if (valor == "") {
-    // senhaHelper.innerText = "O campo senha não pode estar vazio"
     mostrarError(senhaInput, senhaHelper, "O campo senha não pode estar vazio");
-    // estilizarInputIncorreto(senhaInput, senhaHelper)
-    inputsCorretos.senha = false;
+    senhaHelper.innerText = "O campo senha não pode estar vazio"
+    // estilizarInputIncorreto(senhaInput, senhaHelper);
+    // inputsCorretos.senha = false;
   } else {
     estilizarInputCorreto(senhaInput, senhaHelper);
     inputsCorretos.senha = true;
