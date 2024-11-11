@@ -140,7 +140,7 @@ h1 {
 }
 
 .helper-text {
-  display:none;
+  display: none;
   font-size: 0.8rem;
   color: darkred;
   margin-top: 2px;
@@ -148,7 +148,7 @@ h1 {
 
 .required-popup::after {
   content: "*Campo obrigatório";
-  position:relative;
+  position: relative;
   float: right;
   color: #dfdfdf;
   font-size: 0.65rem;
@@ -201,11 +201,10 @@ section {
 }
 
 label {
-  font-weight:bold;
+  font-weight: bold;
 }
 
 #nacionalidade {
   color: blue;
-  font-weight:bold;
+  font-weight: bold;
 }
-
